@@ -1,4 +1,4 @@
-package lesson.live.graphics;
+package lession.draw.objects;
 
 import javax.swing.JFrame;
 
@@ -13,7 +13,16 @@ public class MainGame {
 	private static void createAndShowGUI() {
 		JFrame frame = new JFrame();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.add(new GamePanel());
+		Player player1 = new Player();
+		GamePanel panel = new GamePanel(player1);
+		
+
+		
+		frame.add(panel);
+		
+		frame.addKeyListener(panel);
+		frame.addKeyListener(player1);
+		
 		frame.pack();
 		frame.setVisible(true);
 	}
